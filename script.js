@@ -1,23 +1,48 @@
+//Computer picks random choice
 function getComputerChoice() {
   const choice = ["rock", "paper", "scissors"];
   return choice[Math.floor(Math.random() * choice.length)];
 }
+const computerSelection = getComputerChoice();
+// user- choice input case insensitive
+function getUserChoice() {
+  const userChoice = prompt(
+    "Choose between rock, paper or scissors. You need to win 5 times, and you will save this kitty!"
+  );
+  return userChoice.toLocaleLowerCase();
+}
 
+const playerSelection = getUserChoice();
+
+// function returns result of the round
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
     return `It's a tie!`;
   } else if (playerSelection === "rock" && computerSelection === "scissors") {
-    return `You won the round!`;
+    playerScore++;
+    return `You won the round, ${playerSelection} beats ${computerSelection}!`;
   } else if (playerSelection === "paper" && computerSelection === "rock") {
-    return `You won the round!`;
+    playerScore++;
+    return `You won the round, ${playerSelection} beats ${computerSelection}!`;
   } else if (playerSelection === "scissors" && computerSelection === "paper") {
-    return `You won the round!`;
+    playerScore++;
+    return `You won the round, ${playerSelection} beats ${computerSelection}!`;
   } else {
+    computerScore++;
     return `You lost this round!`;
   }
 }
-const playerSelection = "rock";
-const computerSelection = getComputerChoice();
-console.log(playerSelection);
-console.log(computerSelection);
-console.log(playRound(playerSelection, computerSelection));
+
+let computerScore = 0;
+let playerScore = 0;
+// loop for 5 game rounds
+function game() {
+  for (let i = 0; i < 4; i++) {
+    const computerSelection = getComputerChoice();
+    playRound(prompt("What do you choose?"), computerSelection);
+    console.log(playerSelection);
+    console.log(computerSelection);
+    console.log(playRound(playerSelection, computerSelection));
+    console.log(playerScore, computerScore);
+  }
+}
