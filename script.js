@@ -46,3 +46,25 @@ function game() {
     console.log(playerScore, computerScore);
   }
 }
+function winner() {
+  if (playerScore > computerScore) {
+    console.log(
+      "You have saved the kitten! Well done! Score " +
+        playerScore +
+        " to  " +
+        computerScore
+    );
+  } else if (playerScore < computerScore) {
+    console.log(
+      "OMG poor kitten...! Score " + playerScore + " to  " + computerScore
+    );
+  } else if (computerScore === playerScore) {
+    console.log("oh, it;s a tie! Kitty have another chance to be saved.");
+  }
+}
+
+console.log(playerSelection);
+console.log(computerSelection);
+console.log(playRound(playerSelection, computerSelection));
+console.log(winner);
+game();
