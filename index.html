@@ -7,6 +7,7 @@
     <title>RPS game</title>
     <script src="script.js" defer></script>
     <link rel="stylesheet" type="text/css" href="./css.css">
+    <script src="https://kit.fontawesome.com/4c536a6bd5.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <div class="game">
@@ -17,20 +18,31 @@
           computer don't understand in what danger he will put this cuteness. Please save the kitten. You need
           to win 5 rounds  FIRST... or you know what will happen!
         </h2>
-        <h2 class="computer-score">Computer: 0</h2>
-      <h2 class="player-score">Player: 0</h2>
+      <h2 class="computer-score" data-score="0">Computer: 0</h2>
+      <h2 class="player-score" data-score="0">Player: 0</h2>
       </h1>
       <h2 id="status"></h2>
       <div class="buttons">
       <button id="rock" class="btn ">ROCK</button>
-      <button id="paper" class="btn ">PAPER</button>
+      <button id="paper" class="btn " > PAPER</button>
       <button id="scissors" class="btn ">SCISSORS</button>
       </div>
     </div>
     <div class="cats">
       <image class="waiting cat" src="waiting.png">
       <image class="falling cat hidden" src="falling.png">
-      <image class="wink cat hidden2" src="winkcatwinner.png">
+      <image class="wink cat hidden2" src=" winkcatwinner.png">
     </div>
+    <footer class="footer">
+      COPYRIGHT &copy; <script>
+        new Date().getFullYear() > 2010 && document.write(+new Date().getFullYear());
+  
+      </script> NAME
+      <! -- github icon --!>
+        <a href="https://github.com/USERNAME" target="_blank">
+          <i class="fab fa-github">
+          </i>
+        </a>
+    </footer>
   </body>
 </html>
