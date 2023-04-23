@@ -12,32 +12,34 @@
   <body>
     <div class="game">
       <h1>
-        Let's play a game ROCK, PAPER, SCISSORS!
-        <h2>
+        Let's play a game ROCK, PAPER, SCISSORS!</h1>
+      <h2>
           Evil computer was told to put cat on the ground. Unfortunately
           computer don't understand in what danger he will put this cuteness. Please save the kitten. You need
           to win 5 rounds  FIRST... or you know what will happen!
-        </h2>
-      <h2 class="computer-score" data-score="0">Computer: 0</h2>
-      <h2 class="player-score" data-score="0">Player: 0</h2>
-      </h1>
+      </h2>
+      <h2 class="cscore" data-score="0">Computer: 0</h2>
+      <h2 class="pscore" data-score="0">Player: 0</h2>
       <h2 id="status"></h2>
+      <div class="cats">   
+        <image class="waiting hidden1 cat" src="waiting.png">
+        <image class="falling  hidden2 cat hidden" src="falling.png">
+        <image class="wink cat hidden3" src=" winkcatwinner.png">
+     </div>
       <div class="buttons">
-      <button id="rock" class="btn ">ROCK</button>
-      <button id="paper" class="btn " > PAPER</button>
-      <button id="scissors" class="btn ">SCISSORS</button>
+         <button id="rock" class="btn ">ROCK</button>
+         <button id="paper" class="btn " > PAPER</button>
+         <button id="scissors" class="btn ">SCISSORS</button>
       </div>
     </div>
-    <div class="cats">
-      <image class="waiting cat" src="waiting.png">
-      <image class="falling cat hidden" src="falling.png">
-      <image class="wink cat hidden2" src=" winkcatwinner.png">
+    <div class="modalmessage">
+      <p class="modal hidden"></p>
+      <button class"reset">PLAY AGAIN</button>
     </div>
     <footer class="footer">
       COPYRIGHT &copy; <script>
         new Date().getFullYear() > 2010 && document.write(+new Date().getFullYear());
-  
-      </script> NAME
+      </script> ReRac
       <! -- github icon --!>
         <a href="https://github.com/USERNAME" target="_blank">
           <i class="fab fa-github">
