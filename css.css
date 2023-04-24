@@ -4,61 +4,55 @@
   padding: 0;
   margin: 0;
 }
+
+html {
+  position: relative;
+  height: 100%;
+}
 body {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 100%;
   font-family: sans-serif, "Times New Roman", Times, serif;
   line-height: 1.5;
-  height: 100vh;
+  min-height: 100%;
   position: relative;
   background-image: url(./bgr2.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  min-width: 100%;
-  flex-direction: row-reverse;
-}
-
-.game {
-  display: flex;
-  flex-direction: column;
-  flex-basis: 100%;
-  padding: 50px;
   text-align: center;
-
-  align-content: center;
+  margin: 20px;
+}
+.content {
+  margin-top: 40px;
+  text-align: center;
+}
+.header {
+  display: flex;
+  text-align: center;
   justify-content: center;
+  padding: 20px 0px;
 }
 
-h1 {
-  font-size: 140%;
-}
-
-h2 {
-  font-size: 80%;
 }
 
 .cscore,
 .pscore {
   text-shadow: 0 0 9px rgb(110, 100, 206);
+  font-size: 20px;
+  font-weight: 600;
+  margin: 20px;
 }
 
 .buttons {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 100%;
-  align-content: center;
+  align-items: center;
   justify-content: center;
-  flex-basis: 33.333333%;
+  gap: 25px;
 }
 
 .cats {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: px;
 }
 .btn {
   background: radial-gradient(
@@ -75,15 +69,9 @@ h2 {
 }
 
 .cat {
-  display: flex;
-  flex-direction: column;
-  flex-basis: 100%;
-  flex: 1;
   min-width: 100px;
   width: 150px;
   max-width: 200px;
-  align-content: center;
-  justify-content: center;
 }
 
 .footer {
@@ -97,7 +85,7 @@ h2 {
   width: 100%;
   padding: 15px;
   font-size: 12px;
-  gap: 5px;
+  margin: 20px;
 }
 /* Popping up message modal window */
 
@@ -123,11 +111,20 @@ h2 {
 }
 
 .btn-reset {
-  font-size: 30px;
-  padding: 10px 15px;
+  padding: 10px 20px;
+  height: 50px;
+  border-radius: 15px;
+  margin: 20px;
+  border-color: rgb(180, 147, 168);
+  filter: drop-shadow(3.4px 3.4px 3.4px rgb(240, 180, 232));
+  background: radial-gradient(
+    circle,
+    rgb(247, 214, 228, 0.2) 60%,
+    rgb(217, 230, 245, 0.3) 60%
+  );
 }
 
-.winner-message {
+.winner {
   font-size: 20px;
   font-weight: 600;
 }
@@ -147,8 +144,9 @@ h2 {
 }
 
 .overlay:active {
+  display: block;
 }
-@media (max-width: 500px) {
+@media (max-width: 450px) {
   .game {
     font-size: 15px;
   }
@@ -173,15 +171,7 @@ h2 {
     width: 70px;
   }
 
-  .sign {
-    font-size: 50px;
-  }
-
   .modal {
     width: 95%;
-  }
-
-  .footer {
-    font-size: ;
   }
 }
