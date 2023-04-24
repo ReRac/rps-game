@@ -24,6 +24,11 @@ body {
   background-repeat: no-repeat;
   text-align: center;
 }
+
+main {
+  flex-grow: 1;
+}
+
 .content {
   margin-top: 40px;
   text-align: center;
@@ -45,14 +50,14 @@ body {
 
 .buttons {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
   gap: 25px;
 }
 
 .cats {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
   position: relative;
 }
@@ -152,11 +157,13 @@ body {
 .overlay:active {
   display: block;
 }
-@media (max-width: 500px) {
-  .main {
+@media (max-width: 550px) {
+  .content {
     font-size: 15px;
   }
-
+  h1 {
+    font-size: 15px;
+  }
   h2 {
     font-size: 12px;
   }
@@ -175,7 +182,7 @@ body {
     height: 50px;
     font-size: 10px;
     font-weight: 600;
-    padding: 10px 15px;
+    padding: 10px 10px;
     margin: 10px;
   }
 
