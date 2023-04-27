@@ -18,7 +18,6 @@ body {
   font-family: sans-serif, "Times New Roman", Times, serif;
   line-height: 1.5;
   max-height: 100vh;
-  position: relative;
   background-image: url(./bgr2.jpg);
   background-size: cover;
   background-repeat: no-repeat;
