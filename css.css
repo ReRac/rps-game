@@ -10,10 +10,6 @@ html {
   height: 100%;
 }
 
-* {
-  outline: 1px solid red;
-}
-
 body {
   font-family: sans-serif, "Times New Roman", Times, serif;
   line-height: 1.5;
@@ -26,6 +22,15 @@ body {
 
 main {
   flex-grow: 1;
+}
+
+.reset {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  border-radius: 15px;
+  border-color: rgb(197, 111, 167);
+  filter: drop-shadow(3.4px 3.4px 3.4px rgb(183, 177, 181));
 }
 
 .content {
@@ -108,15 +113,19 @@ main {
   align-content: center;
   background: radial-gradient(
     circle,
-    rgb(247, 214, 228, 0.2) 60%,
+    rgba(112, 7, 103, 0.2) 60%,
     rgb(217, 230, 245, 0.3) 60%
   );
   user-select: none;
   font-size: 15px;
 }
 
-.reset .modal.active {
+.modal.active {
   transform: translate(-50%, -50%);
+}
+
+.hidden {
+  display: none;
 }
 
 .btn-reset {
@@ -185,8 +194,6 @@ main {
     margin: 10px;
   }
 
-  .footer {
-  }
   .cats {
     width: auto;
     gap: 10px;
