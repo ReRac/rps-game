@@ -14,9 +14,10 @@
       <h1>
         Let's play a game ROCK, PAPER, SCISSORS!</h1>
     </header>
-    <main class="content selection-message">
+    <button class="reset">RESET</button>
+    <main class="content selection>
       <div class="scores">
-        <h2>
+        <h2 class="scores-messages">
           Evil computer was told to put cat on the ground. Unfortunately
           computer don't understand in what danger he will put this cuteness. Please save the kitten. You need
           to win 5 rounds  FIRST... or you know what will happen!
@@ -26,9 +27,9 @@
             <p class="pscore" data-score="0">Player: 0</p> 
        </div> 
       <div class="cats">   
-        <image class="waiting hidden1 cat" src="waiting.png">
-        <image class="falling  hidden2 cat hidden" src="falling.png">
-        <image class="wink cat hidden3" src=" winkcatwinner.png">
+        <image class="waiting cat" src="waiting.png">
+        <image class="falling cat " src="falling.png">
+        <image class="wink cat" src="winkcatwinner.png">
       </div>
       <div class="buttons">
          <button id="rock" class="btn ">ROCK</button>
@@ -46,7 +47,7 @@
           </i>
         </a>
     </footer>
-    <div class="modal-message">
+    <div class="modal-message hidden">
       <p class="modal hidden winner-message"></p>
       <button class="btn-reset">PLAY AGAIN</button>  
     </div>
