@@ -85,6 +85,8 @@ const reset = document.getElementById("reset");
 const restart = document.getElementById("restart");
 const winnerMessage = document.querySelector(".modal");
 const buttons = [rock, paper, scissors];
+const pscore = document.querySelector(".pscore");
+const cscore = document.querySelector(".score");
 
 let computerScore = 0;
 let playerScore = 0;
@@ -109,14 +111,18 @@ function playRound(playerSelection, computerSelection) {
     (playerSelection === "scissors" && computerSelection === "paper")
   ) {
     playerScore++;
-    document.querySelector(".pscore").textContent = playerScore;
+    document.querySelector(
+      ".pscore"
+    ).textContent = `Player Score: ${playerScore}`;
     displayMessage(
       `You won the round, ${playerSelection} beats ${computerSelection}!`
     );
   } else {
     computerScore++;
     displayMessage(`You lost this round!`);
-    document.querySelector(".cscore").innerText = computerScore;
+    document.querySelector(
+      ".cscore"
+    ).innerText = `Computer Score: ${computerScore}`;
   }
   if (playerScore === 5) {
     displayMessage(
