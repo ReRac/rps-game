@@ -84,7 +84,7 @@ const scoresMessage = document.querySelector(".scores-messages");
 const reset = document.getElementById("reset");
 const restart = document.getElementById("restart");
 const winnerMessage = document.querySelector(".modal");
-const buttons = document.querySelectorAll("game");
+const buttons = [rock, paper, scissors];
 
 let computerScore = 0;
 let playerScore = 0;
@@ -132,7 +132,7 @@ function checkWinner() {
 
   buttons.forEach((game) => {
     game.addEventListener("click", () => {
-      let computerSelection = getComputerChoice;
+      let computerSelection = getComputerChoice();
       if (playerChoices.includes(game.id)) {
         playRound(game.id.split("-")[0], computerSelection);
       }
