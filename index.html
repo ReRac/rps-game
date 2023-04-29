@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>RPS game</title>
-    <script src="script.js" defer></script>
     <link rel="stylesheet" type="text/css" href="./css.css">
     <script src="https://kit.fontawesome.com/4c536a6bd5.js" crossorigin="anonymous"></script>
   </head>
@@ -14,8 +13,8 @@
       <h1>
         Let's play a game ROCK, PAPER, SCISSORS!</h1>
     </header>
-    <button class="reset">RESET</button>
-    <main class="content selection>
+    <button class="restart" id="restart">RESTART</button>
+    <main class="content selection">
       <div class="scores">
         <h2 class="scores-messages">
           AI was told to put cat on the ground. Unfortunately computer don't understand in what danger he will put this cuteness. Please save the kitten. You need to win 5 rounds  FIRST... or you know what will happen!
@@ -30,9 +29,9 @@
         <image class="wink cat" src="winkcatwinner.png">
       </div>
       <div class="buttons">
-         <button id="rock" class="btn ">ROCK</button>
-         <button id="paper" class="btn " > PAPER</button>
-         <button id="scissors" class="btn ">SCISSORS</button>
+         <button id="rock-game" class="btn ">ROCK</button>
+         <button id="paper-game" class="btn " > PAPER</button>
+         <button id="scissors-game" class="btn ">SCISSORS</button>
       </div>
     </main>
     <footer class="footer">
@@ -47,8 +46,9 @@
     </footer>
     <div class="modal-message hidden">
       <p class="modal hidden winner-message"></p>
-      <button class="btn-reset">PLAY AGAIN</button>  
+      <button class="btn-reset" id="reset">PLAY AGAIN</button>  
     </div>
     <div class="overlay" id="overlay"></div>
+<script src="script.js"></script>
   </body>
 </html>

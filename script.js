@@ -75,77 +75,76 @@
 // game();
 
 // REFACTORING code UI
-("use-strict");
-const rock = document.querySelector(".rock");
-const paper = document.querySelector(".paper");
-const scissors = document.querySelector(".scissors");
-const scoresMessage = document.querySelector("scores-messages");
-const reset = document.querySelector("reset");
+"use-strict";
+
+const rock = document.getElementById("rock");
+const paper = document.getElementById("paper");
+const scissors = document.getElementById("scissors");
+const scoresMessage = document.querySelector(".scores-messages");
+const reset = document.getElementById("reset");
+const restart = document.getElementById("restart");
 const winnerMessage = document.querySelector(".modal");
+const buttons = document.querySelectorAll("game");
 
 let computerScore = 0;
 let playerScore = 0;
 let winner = "";
 
-
-
 const displayMessage = function (message) {
-  document.querySelector("scores-messages").textContent = message;
+  document.querySelector(".scores-messages").textContent = message;
 };
-
-buttons.forEach((button) => {
-  button.addEventListener("click", getUserChoice);
-});
 
 function getComputerChoice() {
   const choice = ["rock", "paper", "scissors"];
   return choice[Math.floor(Math.random() * choice.length)];
 }
 
-
-document.getElementById('scorePlayer').innerText = (playerScore)
-
-
-
-
 //Compare player selection vs computer selection.
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
     displayMessage(`It's a tie!`);
-  } else if (playerSelection === "rock" && computerSelection === "scissors" || playerSelection === "paper" && computerSelection === "rock" || playerSelection === "scissors" && computerSelection === "paper") {
+  } else if (
+    (playerSelection === "rock" && computerSelection === "scissors") ||
+    (playerSelection === "paper" && computerSelection === "rock") ||
+    (playerSelection === "scissors" && computerSelection === "paper")
+  ) {
     playerScore++;
+    document.querySelector(".pscore").textContent = value;
     displayMessage(
       `You won the round, ${playerSelection} beats ${computerSelection}!`
     );
-    document.getElementById('.computeScore').innerText = (computerScore);
+    document.querySelector(".pscore").innerText = playerScore;
   } else {
-    computerScore++
+    computerScore++;
+    document.querySelector(".cscore").textContent = value;
     displayMessage(`You lost this round!`);
-    document.getElementById(.playerScore).innerText = (computerScore);
+    document.querySelector(".cscore").innerText = computerScore;
   }
-  checkWinner();
+  if (playerScore === 5) {
+    displayMessage(
+      `You have saved the kitten! Well done! P ${playerScore}  to  C ${computerScore}`
+    );
+  } else if (computerScore === 5) {
+    displayMessage(`"OMG poor kitten...!`);
+  }
 }
 
 function checkWinner() {
-  if (playerScore <= 5) {
-    displayMessage(`You have saved the kitten! Well done! P " +
-    ${playerScore} 
-      " to  " +
-      C ${computerScore}`);
-  } else if (computerScore <= 5) {
-    displayMessage(`
-    "OMG poor kitten...!`);
-  } else if (computerScore === playerScore) {
-    displayMessage(`Oh, a tie! Kitty have another chance to be saved`);
-  }
+  buttons.forEach((game) => {
+    game.addEventListener("click", () => {
+      let computerSelection = getComputerChoice();
+      if (game.id === "game") {
+        playRound(game.value, computerSelection);
+      }
+    });
+  });
 }
 
-
-function reset() {
-  button.reset.addEventListener("click", () = >(
-    window.location.reload
-  ))
+function restartGame() {
+  window.location.reload();
 }
+
+reset.addEventListener("click", restartGame);
+restart.addEventListener("click", restartGame);
 
 checkWinner();
-reset();
