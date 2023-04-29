@@ -77,9 +77,9 @@
 // REFACTORING code UI
 "use-strict";
 
-const rock = document.getElementById("rock");
-const paper = document.getElementById("paper");
-const scissors = document.getElementById("scissors");
+const rock = document.getElementById("rock-game");
+const paper = document.getElementById("paper-game");
+const scissors = document.getElementById("scissors-game");
 const scoresMessage = document.querySelector(".scores-messages");
 const reset = document.getElementById("reset");
 const restart = document.getElementById("restart");
@@ -109,14 +109,12 @@ function playRound(playerSelection, computerSelection) {
     (playerSelection === "scissors" && computerSelection === "paper")
   ) {
     playerScore++;
-    document.querySelector(".pscore").textContent = value;
+    document.querySelector(".pscore").textContent = playerScore;
     displayMessage(
       `You won the round, ${playerSelection} beats ${computerSelection}!`
     );
-    document.querySelector(".pscore").innerText = playerScore;
   } else {
     computerScore++;
-    document.querySelector(".cscore").textContent = value;
     displayMessage(`You lost this round!`);
     document.querySelector(".cscore").innerText = computerScore;
   }
@@ -130,11 +128,13 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function checkWinner() {
+  const playerChoices = ["rock-game", "paper-game", "scissors-game"];
+
   buttons.forEach((game) => {
     game.addEventListener("click", () => {
-      let computerSelection = getComputerChoice();
-      if (game.id === "game") {
-        playRound(game.value, computerSelection);
+      let computerSelection = getComputerChoice;
+      if (playerChoices.includes(game.id)) {
+        playRound(game.id.split("-")[0], computerSelection);
       }
     });
   });
