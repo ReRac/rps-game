@@ -96,6 +96,12 @@ const displayMessage = function (message) {
   document.querySelector(".scores-messages").textContent = message;
 };
 
+function disable() {
+  document
+    .querySelectorAll(".btn")
+    .forEach((element) => (element.disabled = true));
+}
+
 function getComputerChoice() {
   const choice = ["rock", "paper", "scissors"];
   return choice[Math.floor(Math.random() * choice.length)];
@@ -128,8 +134,10 @@ function playRound(playerSelection, computerSelection) {
     displayMessage(
       `You have saved the kitten! Well done! P ${playerScore}  to  C ${computerScore}`
     );
+    disable();
   } else if (computerScore === 5) {
     displayMessage(`"OMG poor kitten...!`);
+    disable();
   }
 }
 
